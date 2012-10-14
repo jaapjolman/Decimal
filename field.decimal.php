@@ -15,11 +15,11 @@ class Field_decimal
 	
 	public $db_col_type				= 'float';
 
-	public $version					= '1.0';
+	public $version					= '1.2';
 
 	public $custom_parameters		= array('decimal_places', 'default_value', 'min_value', 'max_value');
 
-	public $author					= array('name'=>'AI Web Systems, Inc.', 'url'=>'http://aiwebsystems.com');
+	public $author					= array('name'=>'Ryan Thompson - AI Web Systems, Inc.', 'url'=>'http://aiwebsystems.com');
 	
 	// --------------------------------------------------------------------------
 
