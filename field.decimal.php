@@ -1,10 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * Streams Credit Card Number Field Type
+ * Decimal Field Type
  *
  * @author		Ryan Thompson - AI Web Systems, Inc.
- * @copyright	Copyright (c) 2011 - 2012, AI Web Systems, Inc.
+ * @copyright	Copyright (c) 208 - 2012, AI Web Systems, Inc.
  * @link		http://aiwebsystems.com
  */
 class Field_decimal
@@ -27,7 +27,8 @@ class Field_decimal
 	 * Process before saving to database
 	 *
 	 * @access	public
-	 * @param	array
+	 * @param	float
+	 * @param	object
 	 * @return	string
 	 */
 	public function pre_save($input, $field)
@@ -54,8 +55,9 @@ class Field_decimal
 	 * Process before outputting
 	 *
 	 * @access	public
+	 * @param	float
 	 * @param	array
-	 * @return	string
+	 * @return	float
 	 */
 	public function pre_output($input, $data)
 	{
@@ -68,7 +70,9 @@ class Field_decimal
 	 * Output the form input
 	 *
 	 * @access	public
-	 * @param	string
+	 * @param	array
+	 * @param	int
+	 * @param	object
 	 * @return	string
 	 */
 	public function form_output($data, $id = false, $field)
@@ -80,13 +84,43 @@ class Field_decimal
 		return form_input($options);
 	}
 
+	/**
+	 * How many decimals do you want to maintain?
+	 *
+	 * @return	string
+	 */
+	public function param_decimal_places( $value = 0 )
+	{
+		return form_input('decimal_places', $value);
+	}
+
+	/**
+	 * Min value?
+	 *
+	 * @return	string
+	 */
+	public function param_min_value( $value = null )
+	{
+		return form_input('min_value', $value);
+	}
+
+	/**
+	 * Max value?
+	 *
+	 * @return	string
+	 */
+	public function param_max_value( $value = null )
+	{
+		return form_input('max_value', $value);
+	}
+
 	// --------------------------------------------------------------------------
 
 	/**
 	 * Strip it down to it's knickers
 	 *
 	 * @access	public
-	 * @param	string
+	 * @param	float
 	 * @param	int
 	 * @return	float
 	 */
